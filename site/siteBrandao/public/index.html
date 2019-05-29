@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login | Cadastro</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/scss/style.scss">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-gradient-warning">
+
+            <div class="container">
+                <a class="navbar-brand h1 mb-0" href="#">Munic - Arte em harmonia</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsite">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarsite">
+
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="a">inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown toggle" href="" data-toggle="dropdown" id="navdrop">
+                                Social
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="" class="dropdown-item">Tumblr</a>
+                                <a href="" class="dropdown-item">Instagra</a>
+                                <a href="" class="dropdown-item">Facebook</a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="modal" data-target="#login_moda">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"data-toggle="modal" data-target="#cadastro_moda">Cadastro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="modal"><span id="usuario"></span></a>
+                        </li>
+
+                    </ul>
+
+
+                    <form class="form-inline">
+                        <input type="search" class="form-control ml-4 mr-2" placeholder="buscar">
+                        <button class="btn btn-dark" type="submit">Ir</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <div class="carousel slide" id="carouselsite" data-ride="carousel">
+
+
+            <ol class="carousel-indicators">
+                <li data-target="#carouselsite" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselsite" data-slide-to="1"></li>
+                <li data-target="#carouselsite" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="img/lofi.jpg" class="img-fluid d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Todas as músicas em um lugar só</h3>
+                        <p>Aqui você ouve desde o mainstream até o indie em apenas um clique </p>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item">
+                    <img src="img/violao.jpg" class="img-fluid d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Espalhe sua Arte</h3>
+                        <p>Aqui você também pode ter suas próprias músicas para todo mundo ouvir</p>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item ">
+                    <img src="img/musicheart.jpg" class="img-fluid d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Crie e transforme Arte</h3>
+                        <p>Melhor ambiente de mixagem em nuvem</p>
+                        <p>Mixe suas músicas e a de outros artistas.</p>
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#carouselsite" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselsite" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="sr-only">Próximo</span>
+                </a>
+    </main>
+
+
+
+    <!--Modal-->
+    <div class="modal fade" id="cadastro_moda" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Cadastro</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="row justify-content-center nb-5">
+                        <div class="col-sm-12 col-md-10 col-lg-8">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-sm-6">
+                                        <label for="input_nome">Seu nome</label>
+                                        <input type="text" class="form-control" id="input_nome" aria-describedby="nomeAviso"  
+                                        placeholder="nome" onblur="validarNome(input_nome)" required>
+                                        <small id="nomeAviso" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="input_sobrenome">Seu email</label>
+                                        <input type="text" class="form-control" id="input_email" aria-describedby="emailAviso" 
+                                        placeholder="Email" onblur="validarEmail(input_email)" required>
+                                        <small id="emailAviso" class="form-text text-muted"></small>
+                                    </div>
+                                
+                                    <div class="form-group col-sm-6">
+                                        <label for="input_senha">Sua senha</label>
+                                        <input type="password" class="form-control" id="input_senha" aria-describedby="senhaAviso"
+                                        placeholder="Senha" onblur="validarSenha(input_senha)" required>
+                                        <small id="senhaAviso" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="input_confsenha">Confirme a senha</label required>
+                                        <input type="password" class="form-control" id="input_confsenha" aria-describedby="confsenAviso"
+                                        placeholder="Senha" onblur="valconfSenha(input_confsenha)">
+                                        <small id="confsenAviso" class="form-text text-muted"></small>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn danger" data-dismiss="modal">Fechar</button>
+                    <button class="btn btn-primary"onclick="cadastro()" id="b_cad">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="login_moda" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="row justify-content-center nb-5">
+                        <div class="col-sm-12 col-md-10 col-lg-8">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-sm-6">
+                                        <label for="input_sobrenome">Seu email</label>
+                                        <input type="text" class="form-control" id="input_logemail" aria-describedby="emailoginlAviso" 
+                                        placeholder="Email" onblur="validarEmail(input_logemail)" required>
+                                        <small id="emailoginlAviso" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="input_senha">Sua senha</label>
+                                        <input type="password" class="form-control" id="input_logsenha" aria-describedby="senhaloginAviso"
+                                        placeholder="Senha" onblur="validarSenha(input_logsenha)" required>
+                                        <small id="senhaloginAviso" class="form-text text-muted"></small>
+                                    </div>
+                                </div>
+                            </form>
+                            <img src="aguarde.gif" id="img_aguarde" style="display: none;">
+                            <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+                                Usuário e/ou senha inválidos!
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn danger" data-dismiss="modal">Fechar</button>
+                    <button class="btn btn-primary"onclick="entrar()" id="b_log">Logar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="node_modules/popper.js/dist/umd/popper.js"></script>
+<script src="js/script.js"></script>

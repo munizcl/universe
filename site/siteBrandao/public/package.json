@@ -1,0 +1,22 @@
+{
+  "name": "siteBrandao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "mssql": "~5.1.0"
+  }
+}
